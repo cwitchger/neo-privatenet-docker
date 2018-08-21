@@ -78,6 +78,10 @@ ADD ./scripts/start_consensus_node.sh /opt/
 ADD ./scripts/claim_neo_and_gas_fixedwallet.py /neo-python/
 ADD ./scripts/claim_gas_fixedwallet.py /neo-python/
 ADD ./wallets/neo-privnet.python-wallet /tmp/wallet
+ADD ./scripts/generate_gas.sh /neo-python
+RUN chmod 755 /neo-python/claim_neo_and_gas_fixedwallet.py
+RUN chmod 755 /neo-python/claim_gas_fixedwallet.py
+RUN chmod 755 /neo-python/generate_gas.sh
 
 # Some .bashrc helpers: 'neopy', and a welcome message for bash users
 RUN echo "alias neopy=\"cd /neo-python && np-prompt -p\"" >> /root/.bashrc
